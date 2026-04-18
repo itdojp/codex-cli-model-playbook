@@ -1,5 +1,10 @@
 # Codex CLI Model Playbook
 
+[![License: ITDO public content](https://img.shields.io/badge/license-ITDO%20public%20content-blue)](./LICENSE)
+[![Codex CLI](https://img.shields.io/badge/Codex%20CLI-0.121.0-black)](https://github.com/itdojp/codex-cli-model-playbook)
+[![Runtime checked](https://img.shields.io/badge/runtime%20checked-2026--04--18-brightgreen)](./examples/model-support.20260418.example.json)
+
+
 A reusable playbook for designing Codex CLI model roles, profile mappings, and account-level compatibility checks.
 
 Repository URL: https://github.com/itdojp/codex-cli-model-playbook

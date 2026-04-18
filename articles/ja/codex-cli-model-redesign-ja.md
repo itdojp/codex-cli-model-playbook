@@ -17,6 +17,13 @@
 - OpenAI 公式 docs を参照している
 - 実際の採用可否は `codex exec` による runtime check を優先している
 
+
+## TL;DR
+
+- 親エージェントは `gpt-5.4`、実装役は `gpt-5.3-codex`、高速修正は `gpt-5.3-codex-spark`、長時間無人実行は `gpt-5.2` に分けると扱いやすいです。
+- picker に表示されるモデルと、実際にアカウントで実行できるモデルは一致しないことがあります。
+- そのため、OpenAI docs の確認だけでなく、`codex exec` による runtime check を profile 採用前に行うべきです。
+
 ## はじめに
 
 Codex CLI のモデル選択画面を見ると、以下のように複数の候補が並びます。
@@ -137,6 +144,14 @@ codex -p tech_book
 codex -p tech_book_bulk
 codex -p tech_book_review
 ```
+
+
+## 最短導入手順
+
+1. `scripts/check_codex_model_support.py` で、現在のアカウントで実行できるモデルを確認する
+2. `examples/config.sample.toml` をベースに profile を作る
+3. `docs/profile-catalog.md` と `docs/quick-commands.md` を見て、用途別に起動コマンドを決める
+4. 必要なら `examples/instructions/` と `examples/agents/` を自分の環境へ持っていく
 
 ## 公開リポジトリに入れたもの
 
