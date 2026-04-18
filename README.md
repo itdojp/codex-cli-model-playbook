@@ -22,22 +22,52 @@ This repository addresses both issues by separating:
 - **runtime compatibility** verified with `codex exec`
 - **operational profile design** for real workflows
 
+## Architecture at a glance
+
+```mermaid
+flowchart LR
+    A[gpt-5.4\nParent / Orchestrator] --> B[gpt-5.3-codex\nDeep implementation]
+    A --> C[gpt-5.3-codex-spark\nFast low-risk fixes]
+    A --> D[gpt-5.4-mini\nLightweight review / sweep]
+    A --> E[gpt-5.2\nLong unattended run]
+
+    F[software_dev] --> A
+    G[software_dev_deep_impl] --> B
+    H[software_dev_fastfix] --> C
+    I[tech_book_bulk] --> D
+    J[autonomous_unattended] --> E
+```
+
+## Adoption flow
+
+```mermaid
+flowchart TD
+    A[Check official model docs] --> B[Check runtime support with codex exec]
+    B --> C{Model supported in this account?}
+    C -- Yes --> D[Assign to an active profile]
+    C -- No --> E[Document but do not assign]
+    D --> F[Use in daily workflow]
+    E --> G[Retest later if account entitlement changes]
+```
+
 ## Contents
 
 - `docs/model-matrix.md`
   - Characteristics of each Codex CLI model and recommended usage.
 - `docs/profile-design.md`
   - Recommended profile architecture for software engineering and technical book authoring.
-- `docs/account-compatibility.md`
-  - How to test what the current account can actually execute.
-- `docs/publishing-plan.md`
-  - How to publish this as a GitHub repository and turn it into a Japanese article.
-- `docs/repository-metadata.md`
-  - Suggested repository name, description, and topic tags.
 - `docs/profile-catalog.md`
   - Purpose-specific profile catalog such as software development, fast-fix, and technical review.
 - `docs/model-usage-status.md`
   - Which models are visible, which are actually used, and why.
+- `docs/account-compatibility.md`
+  - How to test what the current account can actually execute.
+- `docs/quick-commands.md`
+  - Startup commands for development, authoring, review, and compatibility checks.
+- `docs/publishing-plan.md`
+  - How to publish this as a GitHub repository and derive an external Japanese article from it.
+- `docs/repository-metadata.md`
+  - Suggested repository name, description, and topic tags.
 - `examples/config.sample.toml`
   - Sample Codex configuration based on the documented design.
 - `examples/agents/`
@@ -81,6 +111,25 @@ This is more reusable than publishing only an article.
 - Bulk consistency/editorial sweep: `gpt-5.4-mini`
 - Code sample verification: `gpt-5.3-codex`
 
+## Quick commands
+
+### Software development
+```bash
+codex -p software_dev
+codex -p software_dev_deep_impl
+codex -p software_dev_fastfix
+codex exec -p autonomous_unattended "<task>"
+```
+
+### Technical writing
+```bash
+codex -p tech_book
+codex -p tech_book_bulk
+codex -p tech_book_review
+```
+
+See also: `docs/quick-commands.md`
+
 ## Important principle
 
 Do not rely only on what the picker shows.
@@ -115,6 +164,7 @@ Start with:
 - `docs/profile-design.md`
 - `docs/profile-catalog.md`
 - `docs/model-usage-status.md`
+- `docs/quick-commands.md`
 
 ## Basis
 
