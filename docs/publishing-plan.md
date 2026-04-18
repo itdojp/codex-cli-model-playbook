@@ -9,7 +9,7 @@
 Publish this playbook in two forms:
 
 1. a reusable GitHub repository
-2. a Qiita article that explains the design and links to the repository
+2. a Japanese article that explains the design and links to the repository
 
 ## Better publication strategy
 
@@ -19,7 +19,7 @@ Instead of publishing only a narrative article, publish a **small operational ki
 - a sample config
 - reusable agent examples
 - a runtime compatibility checker
-- a Qiita article draft that points back to the repository
+- a Japanese article draft that points back to the repository
 
 This makes the work maintainable and reusable.
 
@@ -33,13 +33,13 @@ This makes the work maintainable and reusable.
 5. Push the repository.
 6. Add screenshots or command captures if needed.
 
-## Qiita article checklist
+## Japanese article checklist
 
 1. Replace placeholder repository URL.
 2. Replace placeholder command output if you want to show real screenshots.
 3. Add a short section on what changed after the redesign.
 4. Add links to official OpenAI docs.
-5. Link to the repository for templates and scripts.
+5. Link to the repository for templates and scripts, without hard-coding a publication platform into repo file names.
 
 ## Suggested article structure
 
@@ -58,4 +58,5 @@ This makes the work maintainable and reusable.
 - `examples/config.sample.toml`
 - `examples/agents/*.toml`
 - `scripts/check_codex_model_support.py`
-- `articles/qiita/codex-cli-model-redesign-ja.md`
+- `LICENSE`
+- `articles/ja/codex-cli-model-redesign-ja.md`

@@ -7,7 +7,7 @@ Repository URL: https://github.com/itdojp/codex-cli-model-playbook
 日本語要約:
 - Codex CLI のモデル選定を「親エージェント」「実装エージェント」「高速修正」「長時間無人実行」「技術書執筆」に分けて設計するための公開用資料です。
 - OpenAI 公式 docs のモデル特性と、実際の `codex exec` によるアカウント別の実行可否を切り分けて扱います。
-- GitHub 公開用のドキュメント、サンプル設定、Qiita 記事草案、モデル互換性チェック用スクリプトを含みます。
+- GitHub 公開用のドキュメント、サンプル設定、日本語記事草案、モデル互換性チェック用スクリプトを含みます。
 
 ## Why this repository exists
 
@@ -31,7 +31,7 @@ This repository addresses both issues by separating:
 - `docs/account-compatibility.md`
   - How to test what the current account can actually execute.
 - `docs/publishing-plan.md`
-  - How to publish this as a GitHub repository and turn it into a Qiita article.
+  - How to publish this as a GitHub repository and turn it into a Japanese article.
 - `docs/repository-metadata.md`
   - Suggested repository name, description, and topic tags.
 - `examples/config.sample.toml`
@@ -40,8 +40,10 @@ This repository addresses both issues by separating:
   - Sample subagent definitions.
 - `scripts/check_codex_model_support.py`
   - Runtime support checker for the current Codex account.
-- `articles/qiita/codex-cli-model-redesign-ja.md`
-  - Draft Qiita article in Japanese.
+- `LICENSE`
+  - Public-content license aligned with other itdojp public repositories.
+- `articles/ja/codex-cli-model-redesign-ja.md`
+  - Draft Japanese article derived from the repository content.
 
 ## Better public release strategy
 
@@ -52,7 +54,7 @@ Use a two-layer publication model:
    - agent definitions
    - checker scripts
    - versioned docs
-2. **Qiita article** for narrative explanation and discovery
+2. **Japanese article** for narrative explanation and discovery
    - motivation
    - design rationale
    - lessons learned
@@ -114,3 +116,8 @@ This repository assumes:
 - The actual executable model set can differ by account entitlement
 
 See the source links in each document.
+
+## License
+
+This repository follows the public-content license policy used by itdojp public content repositories.
+See `LICENSE`.

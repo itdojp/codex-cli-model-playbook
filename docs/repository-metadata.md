@@ -41,6 +41,6 @@ Option 2:
 ## Recommended publication stance
 
 - GitHub repository: English-friendly and reusable
-- Qiita article: Japanese explanatory article linked to the repository
+- External Japanese article: explanatory article linked to the repository
 
-This split gives better long-term reuse than keeping everything only in Qiita.
+This split gives better long-term reuse than keeping everything only in a platform-specific external article.
