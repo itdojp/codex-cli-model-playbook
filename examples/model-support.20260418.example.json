@@ -1,0 +1,55 @@
+{
+  "generated_at_utc": "2026-04-18T01:51:55.067439+00:00",
+  "command": "check_codex_model_support.py",
+  "summary_only": true,
+  "results": [
+    {
+      "model": "gpt-5.4",
+      "supported": true,
+      "returncode": 0,
+      "note": "OK"
+    },
+    {
+      "model": "gpt-5.4-mini",
+      "supported": true,
+      "returncode": 0,
+      "note": "OK"
+    },
+    {
+      "model": "gpt-5.3-codex",
+      "supported": true,
+      "returncode": 0,
+      "note": "OK"
+    },
+    {
+      "model": "gpt-5.3-codex-spark",
+      "supported": true,
+      "returncode": 0,
+      "note": "OK"
+    },
+    {
+      "model": "gpt-5.2",
+      "supported": true,
+      "returncode": 0,
+      "note": "OK"
+    },
+    {
+      "model": "gpt-5.2-codex",
+      "supported": false,
+      "returncode": 1,
+      "note": "The 'gpt-5.2-codex' model is not supported when using Codex with a ChatGPT account."
+    },
+    {
+      "model": "gpt-5.1-codex-max",
+      "supported": false,
+      "returncode": 1,
+      "note": "The 'gpt-5.1-codex-max' model is not supported when using Codex with a ChatGPT account."
+    },
+    {
+      "model": "gpt-5.1-codex-mini",
+      "supported": false,
+      "returncode": 1,
+      "note": "The 'gpt-5.1-codex-mini' model is not supported when using Codex with a ChatGPT account."
+    }
+  ]
+}
