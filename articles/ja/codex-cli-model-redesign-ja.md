@@ -8,6 +8,13 @@
 - picker に表示されるモデルと、実際に使うべきモデルをどう切り分けるか
 - その判断を再利用可能なドキュメントや設定サンプルに落とす方法
 
+## 対象読者
+
+- Codex CLI を継続的に使っている開発者
+- 複数モデルの使い分けに迷っている人
+- ソフトウェア開発と技術書執筆の両方で AI エージェントを使いたい人
+- picker に出るモデルをそのまま採用してよいのか判断したい人
+
 ## 前提
 
 本稿の前提は次の通りです。
@@ -116,6 +123,27 @@ codex exec -m gpt-5.2-codex --skip-git-repo-check "Reply with OK only."
 2. `codex exec` で runtime support を確認する
 3. 実行できるモデルだけを profile に割り当てる
 
+## 検証で確認したモデル状況
+
+| モデル | picker 表示 | runtime check | 採用状況 | 主な用途 |
+| --- | --- | --- | --- | --- |
+| `gpt-5.4` | Yes | Supported | 採用 | 親エージェント / 技術書主担当 |
+| `gpt-5.4-mini` | Yes | Supported | 採用 | 高ボリューム整合性確認 |
+| `gpt-5.3-codex` | Yes | Supported | 採用 | 深い実装 |
+| `gpt-5.3-codex-spark` | Yes | Supported | 採用 | 高速小修正 |
+| `gpt-5.2` | Yes | Supported | 採用 | 長時間無人実行 |
+| `gpt-5.2-codex` | Yes | Unsupported | 不採用 | docs 上は有力だが runtime 不可 |
+| `gpt-5.1-codex-max` | Yes | Unsupported | 不採用 | runtime 不可 |
+| `gpt-5.1-codex-mini` | Yes | Unsupported | 不採用 | runtime 不可 |
+
+## なぜ `gpt-5.2-codex` を採用しなかったか
+
+公式 docs の位置づけだけを見ると、`gpt-5.2-codex` は長い実装タスク向けの有力候補です。
+
+ただし、今回の環境では `codex exec -m gpt-5.2-codex ...` が失敗しました。したがって、profile に割り当てる判断は採りませんでした。
+
+ここで重要なのは、**docs 上の推奨順位** と **自分のアカウントで実行できるか** は別問題だという点です。
+
 ## 実際に使っている profile 構成
 
 | 用途 | profile | model |
@@ -153,6 +181,18 @@ codex -p tech_book_review
 3. `docs/profile-catalog.md` と `docs/quick-commands.md` を見て、用途別に起動コマンドを決める
 4. 必要なら `examples/instructions/` と `examples/agents/` を自分の環境へ持っていく
 
+## リポジトリを見る順番
+
+初めて見る場合は、次の順番を推奨します。
+
+1. `README.md`
+2. `docs/model-matrix.md`
+3. `docs/profile-design.md`
+4. `docs/profile-catalog.md`
+5. `docs/model-usage-status.md`
+6. `docs/quick-commands.md`
+7. `examples/config.sample.toml`
+
 ## 公開リポジトリに入れたもの
 
 - モデル特性の整理表
@@ -174,6 +214,21 @@ codex -p tech_book_review
 - 高速小修正専用の profile を分ける
 - 新しいモデルが出たら、まず `codex exec` で動作確認する
 - profile と instruction file はセットで管理する
+
+## まずはこの最小セットで始める
+
+最初からすべてを使い分ける必要はありません。最初の運用は次の 3 本で十分です。
+
+- `software_dev`
+- `software_dev_deep_impl`
+- `tech_book`
+
+そこから必要に応じて、
+- `software_dev_fastfix`
+- `autonomous_unattended`
+- `tech_book_bulk`
+
+を追加すると、運用を破綻させずに広げやすくなります。
 
 ## まとめ
 

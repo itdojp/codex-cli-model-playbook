@@ -69,6 +69,8 @@ flowchart TD
   - How to test what the current account can actually execute.
 - `docs/quick-commands.md`
   - Startup commands for development, authoring, review, and compatibility checks.
+- `docs/article-publishing-kit-ja.md`
+  - Title, summary, tag, and checklist suggestions for publishing the Japanese article.
 - `docs/publishing-plan.md`
   - How to publish this as a GitHub repository and derive an external Japanese article from it.
 - `docs/repository-metadata.md`
@@ -134,6 +136,12 @@ codex -p tech_book_review
 ```
 
 See also: `docs/quick-commands.md`
+
+## If you want to publish the article
+
+Use these files together:
+- `articles/ja/codex-cli-model-redesign-ja.md`
+- `docs/article-publishing-kit-ja.md`
 
 ## Important principle
 

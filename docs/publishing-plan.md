@@ -57,6 +57,7 @@ This makes the work maintainable and reusable.
 - `docs/account-compatibility.md`
 - `docs/profile-catalog.md`
 - `docs/model-usage-status.md`
+- `docs/article-publishing-kit-ja.md`
 - `examples/config.sample.toml`
 - `examples/agents/*.toml`
 - `examples/instructions/*.md`
