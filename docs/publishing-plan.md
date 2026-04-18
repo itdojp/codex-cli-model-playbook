@@ -1,5 +1,9 @@
 # Publishing plan
 
+## Current public repository
+
+- https://github.com/itdojp/codex-cli-model-playbook
+
 ## Goal
 
 Publish this playbook in two forms:

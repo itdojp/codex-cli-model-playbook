@@ -2,6 +2,8 @@
 
 A reusable playbook for designing Codex CLI model roles, profile mappings, and account-level compatibility checks.
 
+Repository URL: https://github.com/itdojp/codex-cli-model-playbook
+
 日本語要約:
 - Codex CLI のモデル選定を「親エージェント」「実装エージェント」「高速修正」「長時間無人実行」「技術書執筆」に分けて設計するための公開用資料です。
 - OpenAI 公式 docs のモデル特性と、実際の `codex exec` によるアカウント別の実行可否を切り分けて扱います。
