@@ -55,8 +55,11 @@ This makes the work maintainable and reusable.
 - `docs/model-matrix.md`
 - `docs/profile-design.md`
 - `docs/account-compatibility.md`
+- `docs/profile-catalog.md`
+- `docs/model-usage-status.md`
 - `examples/config.sample.toml`
 - `examples/agents/*.toml`
+- `examples/instructions/*.md`
 - `scripts/check_codex_model_support.py`
 - `LICENSE`
 - `articles/ja/codex-cli-model-redesign-ja.md`

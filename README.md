@@ -34,10 +34,16 @@ This repository addresses both issues by separating:
   - How to publish this as a GitHub repository and turn it into a Japanese article.
 - `docs/repository-metadata.md`
   - Suggested repository name, description, and topic tags.
+- `docs/profile-catalog.md`
+  - Purpose-specific profile catalog such as software development, fast-fix, and technical review.
+- `docs/model-usage-status.md`
+  - Which models are visible, which are actually used, and why.
 - `examples/config.sample.toml`
   - Sample Codex configuration based on the documented design.
 - `examples/agents/`
   - Sample subagent definitions.
+- `examples/instructions/`
+  - Reusable instruction files for software development and technical writing workflows.
 - `scripts/check_codex_model_support.py`
   - Runtime support checker for the current Codex account.
 - `LICENSE`
@@ -107,6 +113,8 @@ Then customize paths, approval policy, and project trust settings.
 Start with:
 - `docs/model-matrix.md`
 - `docs/profile-design.md`
+- `docs/profile-catalog.md`
+- `docs/model-usage-status.md`
 
 ## Basis
 
